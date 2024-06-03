@@ -33,11 +33,11 @@ st.title('AI สรุปการประชุมจากไฟล์เส�
 st.text("Application สำหรับสรุปการประชุมจากไฟล์เสียง")
 st.text("ไฟล์เสียงที่รองรับ: wav, mp3, ogg, flac, m4a")
 st.markdown("สามารถติดตามหรือขอให้สร้าง Application ใหม่ๆ ได้ที่")
-st.button("Facebook Page #AI", on_click='https://www.facebook.com/profile.php?id=61560597801592')
+st.link_button("Facebook Page #AI",url='https://www.facebook.com/profile.php?id=61560597801592')
 st.sidebar.markdown("""# About US""")
 st.sidebar.markdown("""## สร้างโดยทีมงาน #AI \n\n #AI for people \n\nเพจที่รวบรวมข่าวสารที่เกี่ยวข้อง และแชร์เทคนิคๆ ต่างของ AI""")
 st.sidebar.markdown("## สามารถติดตามเราได้ที่ ")
-st.button("Facebook Page #AI", on_click='https://www.facebook.com/profile.php?id=61560597801592')
+st.sidebar.link_button("Facebook Page #AI", url='https://www.facebook.com/profile.php?id=61560597801592')
 st.sidebar.image('logo.png', width=100)  
 st.sidebar.markdown("สามารถใช้งานได้ฟรี และไม่มีค่าใช้จ่ายเพิ่มเติม \nโดย Google AI Studio \n\n")
 
