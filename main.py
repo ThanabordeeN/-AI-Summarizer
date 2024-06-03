@@ -31,6 +31,7 @@ def save_uploaded_file(uploaded_file):
 st.image('image.png')
 st.title('AI สรุปการประชุมจากไฟล์เสียง ฟรี!')
 st.text("Application สำหรับสรุปการประชุมจากไฟล์เสียง")
+st.markdown("สามารถติดตามหรือขอให้สร้าง Application ใหม่ๆ ได้ที่ [Facebook Page #AI](https://www.facebook.com/profile.php?id=61560597801592)")
 st.sidebar.markdown("""# About US""")
 st.sidebar.markdown("""## สร้างโดยทีมงาน #AI \n\n #AI for people \n\nเพจที่รวบรวมข่าวสารที่เกี่ยวข้อง และแชร์เทคนิคๆ ต่างของ AI""")
 st.sidebar.markdown("## สามารถติดตามเราได้ที่ \n\n **[Facbook Page #AI](https://www.facebook.com/profile.php?id=61560597801592)** ")
