@@ -41,8 +41,10 @@ audio_file = st.file_uploader("Upload Audio File", type=["wav", "mp3", "ogg", "f
 if audio_file is not None:
     audio_path = save_uploaded_file(audio_file)
     st.audio(audio_path)
-
-    if st.button('Process Audio'):
-        with st.spinner('Processing...'):
-            processed_text = process_audio(audio_path)
-            st.text_area("Processed Output", clean_msg(processed_text), height=500)
+    try:
+        if st.button('Process Audio'):
+            with st.spinner('Processing...'):
+                processed_text = process_audio(audio_path)
+                st.text_area("Processed Output", clean_msg(processed_text), height=500)
+    except:
+        st.error("ระบบไม่สามารถประมวลผลไฟล์เสียงได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง เนื่องจากมีคนใช้งานจำนวนมาก กรุณาลองใหม่อีกครั้งในภายหลัง")
