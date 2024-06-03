@@ -16,6 +16,8 @@ def process_audio(audio_file_path):
         ]
     )
     return response.text
+def clean_msg(msg):
+    return msg.replace("**", "").replace("##", "#").replace("*","•").replace("\n\n","\n")
 
 def save_uploaded_file(uploaded_file):
     """Save uploaded file to a temporary file and return the path."""
@@ -43,4 +45,4 @@ if audio_file is not None:
     if st.button('Process Audio'):
         with st.spinner('Processing...'):
             processed_text = process_audio(audio_path)
-            st.text_area("Processed Output", processed_text, height=500)
+            st.text_area("Processed Output", clean_msg(processed_text), height=500)
