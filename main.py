@@ -1,11 +1,6 @@
 import streamlit as st
 import tempfile
-import os
 import google.generativeai as genai
-
-from dotenv import load_dotenv
-
-load_dotenv()
 def API_KEY(api):
     GOOGLE_API_KEY = api
     genai.configure(api_key=GOOGLE_API_KEY)
