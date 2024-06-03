@@ -28,7 +28,7 @@ def save_uploaded_file(uploaded_file):
     except Exception as e:
         st.error(f"Error handling uploaded file: {e}")
         return None
-st.image('image.png')
+st.image('image.png', width=700)
 st.title('AI สรุปการประชุมจากไฟล์เสียง ฟรี!')
 st.text("Application สำหรับสรุปการประชุมจากไฟล์เสียง")
 st.text("ไฟล์เสียงที่รองรับ: wav, mp3, ogg, flac, m4a")
