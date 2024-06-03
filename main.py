@@ -2,7 +2,7 @@ import streamlit as st
 import tempfile
 import google.generativeai as genai
 
-genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+#genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 def process_audio(audio_file_path):
     """Process the audio using the user's prompt with Google's Generative API."""
     model = genai.GenerativeModel("models/gemini-1.5-flash")
@@ -26,6 +26,7 @@ def save_uploaded_file(uploaded_file):
     except Exception as e:
         st.error(f"Error handling uploaded file: {e}")
         return None
+st.logo(image="logo.png",icon_image='logo.png')
 st.image('image.png', width=700)
 st.title('AI สรุปการประชุมจากไฟล์เสียง ฟรี!')
 
@@ -33,7 +34,7 @@ st.title('AI สรุปการประชุมจากไฟล์เส�
 st.sidebar.markdown("""# About US""")
 st.sidebar.markdown("""## สร้างโดยทีมงาน #AI \n\n **#AI for people** \n\nเพจที่รวบรวมข่าวสารที่เกี่ยวข้อง และแชร์เทคนิคๆ ต่างของ AI""")
 st.sidebar.markdown("## สามารถติดตามเราได้ที่ ")
-st.sidebar.image('logo.png', width=100)  
+st.sidebar.image('logo.png', width=100)
 
 
 st.sidebar.link_button("Facebook Page #AI",url='https://www.facebook.com/profile.php?id=61560597801592')
