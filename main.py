@@ -31,6 +31,7 @@ def save_uploaded_file(uploaded_file):
 st.image('image.png')
 st.title('AI สรุปการประชุมจากไฟล์เสียง ฟรี!')
 st.text("Application สำหรับสรุปการประชุมจากไฟล์เสียง")
+st.text("ไฟล์เสียงที่รองรับ: wav, mp3, ogg, flac, m4a")
 st.markdown("สามารถติดตามหรือขอให้สร้าง Application ใหม่ๆ ได้ที่ [Facebook Page #AI](https://www.facebook.com/profile.php?id=61560597801592)")
 st.sidebar.markdown("""# About US""")
 st.sidebar.markdown("""## สร้างโดยทีมงาน #AI \n\n #AI for people \n\nเพจที่รวบรวมข่าวสารที่เกี่ยวข้อง และแชร์เทคนิคๆ ต่างของ AI""")
@@ -38,7 +39,7 @@ st.sidebar.markdown("## สามารถติดตามเราได้�
 st.sidebar.image('logo.png', width=100)  
 st.sidebar.markdown("สามารถใช้งานได้ฟรี และไม่มีค่าใช้จ่ายเพิ่มเติม \nโดย Google AI Studio \n\n")
 
-audio_file = st.file_uploader("Upload Audio File", type=["wav", "mp3", "ogg", "flac", "m4a"])
+audio_file = st.file_uploader("อัพโหลดไฟล์เสียง", type=["wav", "mp3", "ogg", "flac", "m4a"])
 if audio_file is not None:
     audio_path = save_uploaded_file(audio_file)
     st.audio(audio_path)
