@@ -28,33 +28,34 @@ def save_uploaded_file(uploaded_file):
         return None
 st.image('image.png', width=700)
 st.title('AI สรุปการประชุมจากไฟล์เสียง ฟรี!')
+
+
+st.sidebar.markdown("""# About US""")
+st.sidebar.markdown("""## สร้างโดยทีมงาน #AI \n\n **#AI for people** \n\nเพจที่รวบรวมข่าวสารที่เกี่ยวข้อง และแชร์เทคนิคๆ ต่างของ AI""")
+st.sidebar.markdown("## สามารถติดตามเราได้ที่ ")
+st.sidebar.image('logo.png', width=100)  
+
+
+st.sidebar.link_button("Facebook Page #AI",url='https://www.facebook.com/profile.php?id=61560597801592')
+
+st.sidebar.markdown("สามารถใช้งานได้ฟรี และไม่มีค่าใช้จ่ายเพิ่มเติม \nโดย Google AI Studio \n\n")
+st.markdown("ผู้ช่วย**สรุปสาระสำคัญ**การประชุมจากไฟล์เสียง")
+audio_file = st.file_uploader("**อัปโหลดไฟล์เสียง**", type=["wav", "mp3", "ogg", "flac", "m4a"])
+
 st.markdown("""แอปพลิเคชันสำหรับสรุปประชุมจากไฟล์เสียง
+
 คุณสมบัติ:
 
 - แปลงไฟล์เสียงเป็นข้อความโดยอัตโนมัติ
 
 - สรุปประเด็นสำคัญของการประชุม
 
-รองรับไฟล์เสียงหลากหลายรูปแบบ: 
-- wav
-- mp3
-- ogg
-- flac
-- m4a
+รองรับไฟล์เสียงหลากหลายรูปแบบ: wav ,mp3 ,ogg ,flac ,m4a
 
-ใช้งานง่าย เพียงแค่อัปโหลดไฟล์เสียงของคุณ
 
 **ติดตามเราได้ที่**:""")
-
 st.link_button("Facebook Page #AI",url='https://www.facebook.com/profile.php?id=61560597801592')
-st.sidebar.markdown("""# About US""")
-st.sidebar.markdown("""## สร้างโดยทีมงาน #AI \n\n #AI for people \n\nเพจที่รวบรวมข่าวสารที่เกี่ยวข้อง และแชร์เทคนิคๆ ต่างของ AI""")
-st.sidebar.markdown("## สามารถติดตามเราได้ที่ ")
-st.sidebar.link_button("Facebook Page #AI", url='https://www.facebook.com/profile.php?id=61560597801592')
-st.sidebar.image('logo.png', width=100)  
-st.sidebar.markdown("สามารถใช้งานได้ฟรี และไม่มีค่าใช้จ่ายเพิ่มเติม \nโดย Google AI Studio \n\n")
-st.markdown("## อัพโหลดไฟล์เสียง")
-audio_file = st.file_uploader("***", type=["wav", "mp3", "ogg", "flac", "m4a"])
+
 if audio_file is not None:
     audio_path = save_uploaded_file(audio_file)
     st.audio(audio_path)
