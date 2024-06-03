@@ -42,6 +42,16 @@ st.sidebar.link_button("Facebook Page #AI",url='https://www.facebook.com/profile
 st.sidebar.markdown("สามารถใช้งานได้ฟรี และไม่มีค่าใช้จ่ายเพิ่มเติม \nโดย Google AI Studio \n\n")
 st.markdown("ผู้ช่วย**สรุปสาระสำคัญ**การประชุมจากไฟล์เสียง")
 audio_file = st.file_uploader("**อัปโหลดไฟล์เสียง**", type=["wav", "mp3", "ogg", "flac", "m4a"])
+if audio_file is not None:
+    audio_path = save_uploaded_file(audio_file)
+    st.audio(audio_path)
+    try:
+        if st.button('Process Audio'):
+            with st.spinner('Processing...'):
+                processed_text = process_audio(audio_path)
+                st.text_area("Processed Output", clean_msg(processed_text), height=500)
+    except:
+        st.error("ระบบไม่สามารถประมวลผลไฟล์เสียงได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง เนื่องจากมีคนใช้งานจำนวนมาก กรุณาลองใหม่อีกครั้งในภายหลัง")
 
 st.markdown("""แอปพลิเคชันสำหรับสรุปประชุมจากไฟล์เสียง
 
@@ -57,13 +67,3 @@ st.markdown("""แอปพลิเคชันสำหรับสรุป�
 **ติดตามเราได้ที่**:""")
 st.link_button("Facebook Page #AI",url='https://www.facebook.com/profile.php?id=61560597801592')
 
-if audio_file is not None:
-    audio_path = save_uploaded_file(audio_file)
-    st.audio(audio_path)
-    try:
-        if st.button('Process Audio'):
-            with st.spinner('Processing...'):
-                processed_text = process_audio(audio_path)
-                st.text_area("Processed Output", clean_msg(processed_text), height=500)
-    except:
-        st.error("ระบบไม่สามารถประมวลผลไฟล์เสียงได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง เนื่องจากมีคนใช้งานจำนวนมาก กรุณาลองใหม่อีกครั้งในภายหลัง")
